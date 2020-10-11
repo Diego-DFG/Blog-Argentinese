@@ -136,3 +136,15 @@ img{
 	color: var(--white);
 	cursor: pointer;
 }
+
+/*-------------- MEDIA QUERY ---------------*/
+
+@media (max-width: 440px) {
+
+	/*------ Post Content Side Bar ------*/
+
+	.posts {
+		display: inline;
+	}
+
+}
