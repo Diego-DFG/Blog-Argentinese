@@ -1,1 +1,120 @@
-:root{--text-gray:#3f4954;--light-blue:#bbe1fa;--white:#fff}.flex-row{display:flex}.text-gray,a{color:var(--text-gray)}a{text-decoration:none}img{text-align:center}.brand{display:flex;font-family:Abel,cursive;text-decoration:none;font-weight:700;font-size:1.5em}.brand a{margin:10px}.nav-bar{justify-content:space-between;border-bottom:1px solid var(--text-gray);border-top:1px solid var(--text-gray)}.nav-items:hover{background:var(--light-blue)}.nav-items-list:hover{background:#fff}.nav-items li{margin-right:40px;list-style-type:none;font-family:Livvic,cursive;font-size:1.2em}.mainImage,.social-media{margin-top:10px}.mainImage{height:70vh;width:100%;margin-bottom:10px}.mainImage-border{border-top:1px solid var(--text-gray);margin-bottom:50px}.container{margin:0 auto;width:100%}.posts{display:flex}.post-content-principal{margin-right:1em;width:50%}.firstContainer,.secondContainer{margin-left:1em;width:80%}.firstContainer{text-align:center}.secondContainer{text-align:center}.fourthContainer,.secondContainer{margin-top:5px;border-top:1px solid var(--text-gray)}.post-container-border{border-right:1px solid var(--text-gray)}.post-content-sideBar{width:50%;margin-left:3em}.post-content-sideBar img{width:100%}.post-title{font-family:'Roboto',sans-serif;font-size:1.5em;margin-top:1.5em;margin-bottom:1.5em}.post-btn{padding:5px 20px;background:var(--text-gray);color:var(--white);cursor:pointer}@media (max-width:440px){.posts{display:inline}}
+
+:root{
+/*      Theme colors        */
+--text-gray: #3f4954; --light-blue: #bbe1fa; --white: #ffffff;
+}
+
+
+
+/*General Elements ----------------------------------------------------------------------------------*/
+body { height: 4080px; }
+.wrapper { height: 100%; overflow: hidden; display: grid; grid-template-areas: "nav nav" "article aside" "footer footer";
+			grid-template-rows: 5% 90% 5%; }
+.flex-row { display: flex; }
+.text-gray { color: var(--text-gray); }
+.post-title { font-family: 'Anton', cursive; font-size: 1.5em; margin-top: 1.5em; margin-bottom: 1.5em; }
+.post-btn { padding:  5px 20px; background: var(--text-gray); color: var(--white); cursor: pointer; }
+.firstContainer { text-align: center; }
+a { text-decoration: none; color: var(--text-gray); }
+img { text-align: center; }
+/*End of General Elements ---------------------------------------------------------------------------*/
+
+
+
+
+/*NAV -----------------------------------------------------------------------------------------------*/
+nav { grid-area: nav; border-bottom: 1px solid rgba(0,0,0, .2);}
+	.nav-items { display: flex; justify-content: space-between; align-items: center; }
+	.brand { margin: .5em; }
+	.brand a { position: relative; bottom: 20px; font-weight: bold; }
+	.nav-items-list { width: 70%;}
+	.nav-items-list ul { display: flex; }
+	.nav-items-list li { list-style: none }
+	.nav-items-list li a { text-decoration: none; padding: 1em; }
+	.toggle-button { position: absolute; top: .75em; right: 1em; display: none; flex-direction: column; 
+					justify-content: space-between; width: 30px; height: 21px; }
+	.toggle-button .bar { height: 3px; width: 100%; border-radius: 10px; background: #222; }
+	.social-media { width: 50%; position: relative; left: 100px; }
+	.social-media a { margin-right: 1em; }
+/*End of nav ---------------------------------------------------------------------------------------*/
+
+
+
+
+/*Article ---------------------------------------------------------------------------------------------*/
+article { grid-area: article; width: 80%; margin-left: 10%; }
+	.mainImage { height: 50vh; width: 100%; margin-top: 10px; margin-bottom: 10px; }
+	.posts { grid-area: main }
+/*End of article --------------------------------------------------------------------------------------*/
+
+
+
+/*Border ------------------------------------------------------------------------------------------*/
+	.post-container-border { border-right: 1px solid var(--text-gray); }
+/*End of border ----------------------------------------------------------------------------------*/
+
+
+
+
+/*Aside ----------------------------------------------------------------------------------------*/
+aside { grid-area: aside; width: 90%; border-left: 1px solid rgba(0,0,0, .2); }
+aside a, aside p { margin-left: 2em;  }
+	.posts-sideBar { width: 100%; text-align: center; }
+	.img3, .img4 { width: 90%; text-align: center; margin-left: 3em;}
+/*End of aside ---------------------------------------------------------------------------------------------*/
+
+
+
+
+/*Footer -------------------------------------------------------------------------------------------*/
+footer { background: #999; grid-area: footer; }
+	.mainFooter { position: relative; left: 30%; top: 30px; color: #fff; font-size: 2em; font-weight: bold;
+					font-family: 'Roboto', sans-serif; }
+/*End of footer ------------------------------------------------------------------------------------*/
+
+
+
+/*---------------------------------------- MEDIA QUERY ---------------------------------------------------------*/
+
+@media (max-width: 420px) {
+
+/*General Elements ----------------------------------------------------------------------------------*/
+body { height: 3980px; }
+.wrapper { display: block; float: left; }
+/*End of General Elements ---------------------------------------------------------------------------*/
+
+/*NAV ------*/
+article { height: 47%; }
+aside { height: 47%; }
+	.toggle-button { display: flex; }
+	.nav-items-list { display: none; }
+	.nav-items { flex-direction: column; align-items: flex-start; }
+	.nav-items-list { width: 80%; flex-direction: column; }
+	.nav-items-list ul { text-align: center; display: block; }
+	.nav-items-list ul li { padding: 1em; }
+	.nav-items-list ul li:hover, .social-media a:hover { background: #999; padding: 1em;}
+	.nav-items-list.active { display: flex; position: relative; z-index: 10; background: #fff; }
+	.social-media { padding: 1em 0; }
+	.social-media a { margin-right: 1em; }
+	.img1, .img2 { width: 80%; }
+	.img3, .img4 { width: 70%; }
+/*End of NAV*/
+
+
+
+/*ARTICLE/ASIDE*/
+	.mainImage { height: 60vh; width: 75vh; }
+	.firstContainer { width: 60%; }
+	.firstContainer a { font-size: 0.8em; text-align: center; position: relative; left: 20px; }
+	.firstContainer p { text-align: left; width: 85%; }
+	.firstContainer .img1 { height: 250px; }
+
+/*End of ARTICLE/ASIDE*/
+
+
+/*FOOTER*/
+footer { height: 6%; }
+	.mainFooter { font-size: 1.6em; }
+	.mainFooter span { position: relative; right: 100px; top: 50px; }
+}
+
