@@ -8,8 +8,8 @@
 
 /*General Elements ----------------------------------------------------------------------------------*/
 body { height: 4080px; }
-.wrapper { height: 100%; overflow: hidden; display: grid; grid-template-areas: "nav nav" "article aside" "footer footer";
-			grid-template-rows: 5% 90% 5%; }
+.wrapper { height: 100%; overflow: hidden; display: grid; grid-template-areas: "nav nav" "section section" "article aside" "footer footer";
+			grid-template-rows: 5% 12% 78% 5%; }
 .flex-row { display: flex; }
 .text-gray { color: var(--text-gray); }
 .post-title { font-family: 'Anton', cursive; font-size: 1.5em; margin-top: 1.5em; margin-bottom: 1.5em; }
@@ -23,7 +23,7 @@ img { text-align: center; }
 
 
 /*NAV -----------------------------------------------------------------------------------------------*/
-nav { grid-area: nav; border-bottom: 1px solid rgba(0,0,0, .2);}
+nav { grid-area: nav; }
 	.nav-items { display: flex; justify-content: space-between; align-items: center; }
 	.brand { margin: .5em; }
 	.brand a { position: relative; bottom: 20px; font-weight: bold; }
@@ -38,12 +38,14 @@ nav { grid-area: nav; border-bottom: 1px solid rgba(0,0,0, .2);}
 	.social-media a { margin-right: 1em; }
 /*End of nav ---------------------------------------------------------------------------------------*/
 
-
+/*Section ------------------------------------------------------------------------------------------*/
+section { grid-area: section }
+.mainImage { height: 70vh; width: 100%; }
+/*End of section -----------------------------------------------------------------------------------*/
 
 
 /*Article ---------------------------------------------------------------------------------------------*/
 article { grid-area: article; width: 80%; margin-left: 10%; }
-	.mainImage { height: 50vh; width: 100%; margin-top: 10px; margin-bottom: 10px; }
 	.posts { grid-area: main }
 /*End of article --------------------------------------------------------------------------------------*/
 
@@ -76,6 +78,12 @@ footer { background: #999; grid-area: footer; }
 
 /*---------------------------------------- MEDIA QUERY ---------------------------------------------------------*/
 
+
+
+
+/*----------- max-width 420px -------------*/
+
+
 @media (max-width: 420px) {
 
 /*General Elements ----------------------------------------------------------------------------------*/
@@ -84,8 +92,6 @@ body { height: 3980px; }
 /*End of General Elements ---------------------------------------------------------------------------*/
 
 /*NAV ------*/
-article { height: 47%; }
-aside { height: 47%; }
 	.toggle-button { display: flex; }
 	.nav-items-list { display: none; }
 	.nav-items { flex-direction: column; align-items: flex-start; }
@@ -96,25 +102,54 @@ aside { height: 47%; }
 	.nav-items-list.active { display: flex; position: relative; z-index: 10; background: #fff; }
 	.social-media { padding: 1em 0; }
 	.social-media a { margin-right: 1em; }
-	.img1, .img2 { width: 80%; }
-	.img3, .img4 { width: 70%; }
 /*End of NAV*/
 
 
 
 /*ARTICLE/ASIDE*/
-	.mainImage { height: 60vh; width: 75vh; }
-	.firstContainer { width: 60%; }
+article { height: 39%; }
+aside { height: 39%; }
+	.firstContainer { width: 100%; }
 	.firstContainer a { font-size: 0.8em; text-align: center; position: relative; left: 20px; }
 	.firstContainer p { text-align: left; width: 85%; }
-	.firstContainer .img1 { height: 250px; }
-
+	.post1 { position: relative; top: 100px; }
+	.post2 { position: relative; top: 300px; }
+	.post4 { position: relative; top: 200px; }
+	.img1, .img2 { width: 90%; }
+	.img3, .img4 { width: 90%; }
 /*End of ARTICLE/ASIDE*/
 
 
 /*FOOTER*/
-footer { height: 6%; }
+footer { height: 10%; }
 	.mainFooter { font-size: 1.6em; }
 	.mainFooter span { position: relative; right: 100px; top: 50px; }
 }
 
+
+
+/*------------ min-width 421px max-width 850px --------------*/
+
+@media (min-width: 421px) and (max-width: 850px) {
+
+/*NAV ------*/
+	.toggle-button { display: flex; }
+	.nav-items-list { display: none; }
+	.nav-items { flex-direction: column; align-items: flex-start; }
+	.nav-items-list { width: 100%; flex-direction: column; }
+	.nav-items-list ul { text-align: center; display: block; }
+	.nav-items-list ul li { padding: 1em; }
+	.nav-items-list ul li:hover, .social-media a:hover { background: #999; padding: 1em;}
+	.nav-items-list.active { display: flex; position: relative; z-index: 10; background: #fff; }
+	.social-media { padding: 1em 0; }
+	.social-media a { margin-right: 1em; }
+	.img1, .img2 { width: 80%; }
+	.img3, .img4 { width: 70%; }
+/*End of NAV*/
+
+/*Article/Aside ----------------------------------------------------------------*/
+article { width: 70%; }
+aside { width: 70%; }
+.img1, .img2 { width: 100%; }
+
+}
